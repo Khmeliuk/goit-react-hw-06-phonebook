@@ -42,13 +42,3 @@ export default function ContactList() {
     </ul>
   );
 }
-
-// ContactList.prototype = {
-//   prop: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       id: PropTypes.number,
-//       name: PropTypes.string,
-//       number: PropTypes.number,
-//     })
-//   ).isRequired,
-// };
