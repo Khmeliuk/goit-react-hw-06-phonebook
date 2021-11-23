@@ -2,11 +2,15 @@ import { useState } from "react";
 import Section from "../section/Section";
 import s from "./Phonebook.module.css";
 import { v4 as uuidv4 } from "uuid";
+import { useDispatch } from "react-redux";
+import { addContact } from "../../redux/action";
 
-export default function Phonebook({ onSubmit }) {
+export default function Phonebook({}) {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   const [id, setId] = useState("");
+
+  const dispatch = useDispatch();
 
   function HandleInputChange(e) {
     switch (e.currentTarget.name) {
@@ -26,8 +30,7 @@ export default function Phonebook({ onSubmit }) {
 
   function HandleSubmitButton(e) {
     e.preventDefault();
-    onSubmit({ name, number, id });
-
+    dispatch(addContact({ name, number, id }));
     reset();
   }
 
